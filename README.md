@@ -1,5 +1,5 @@
 # lua-xml-table-parser
-require lib https://github.com/LuaDist/luaxml
+require lib luaXml -> https://github.com/LuaDist/luaxml
 
 ## Usage
 ### xml.xml_str2table(string)
