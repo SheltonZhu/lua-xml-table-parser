@@ -52,17 +52,17 @@ local function parse_element(element)
     return tag, children
 end
 
-function _M.table2xml(json_table, root, encoding, return_xml_obj)
-    assert(type(json_table) == 'table', 'must be table')
+function _M.table2xml(_table, root, encoding, return_xml_obj)
+    assert(type(_table) == 'table', 'must be table')
     if not root then
-        for fk, fv in pairs(json_table) do
+        for fk, fv in pairs(_table) do
             root = fk
-            json_table = fv
+            _table = fv
             break
         end
     end
     local xml_obj = xml.new(root)
-    append_element(xml_obj, json_table)
+    append_element(xml_obj, _table)
     if not encoding then
         encoding = 'GBK'
     end
